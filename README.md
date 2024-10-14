@@ -6,8 +6,8 @@ Oswaldo Gressani
 
 This repository contains all the routines required to reproduce the
 results in the preprint entitled “Nonparametric serial interval
-estimation” by Oswaldo Gressani and Niel Hens. The preprint is available
-on MedRxiv (ref).
+estimation” by Oswaldo Gressani and Niel Hens. The preprint will soon be
+available on a preprint repository.
 
 This repository is organized in two main folders (**01-Simulations** and
 **02-RealData**).
@@ -28,7 +28,7 @@ the GitHub repository <https://github.com/oswaldogressani/EpiLPS>.
 
 ### Repository version
 
-This is version 0.0.1 (2024-10-18) - “SILPS-V1”.
+This is version 0.0.1 (2024-10-14) - “SILPS-V1”.
 
 ### License
 

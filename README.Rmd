@@ -28,7 +28,7 @@ EpiLPS (v1.4.0) will be needed and can be installed from the GitHub repository
 [https://epilps.com/](https://epilps.com/)
 
 ### Repository version
-This is version 0.0.1 (2024-10-18) - “SILPS-V1”.
+This is version 0.0.1 (2024-10-14) - “SILPS-V1”.
 
 ### License
 Copyright © Oswaldo Gressani. All rights reserved.
