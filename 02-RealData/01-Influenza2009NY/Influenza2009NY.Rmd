@@ -1,0 +1,71 @@
+---
+title: "Data on infector-infectee pairs for H1N1 Influenza A"
+author: "Oswaldo Gressani"
+date: "2024-08-16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 1. Data source
+
+**Last accessed (Date in YYYY-MM-DD format):** 2024-08-16 
+
+**HTML link to data source:** <https://ars.els-cdn.com/content/image/1-s2.0-S1755436519300350-mmc3.zip>
+
+**HTML link or DOI to associated article:** <https://doi.org/10.1016/j.epidem.2019.100356>
+
+**Journal name:** Epidemics (EPID)
+
+**Data format:** Dataset downloaded from publisher in csv format (.csv)
+
+**Additional notes:** None. 
+
+
+### 2. Short data description
+
+The dataset contains H1N1 Influenza A illness onset data for 16 transmission pairs. Data
+are doubly interval censored. [1] Lessler et al. (2009) <https://www.nejm.org/doi/full/10.1056/NEJMoa0906089> has an equivalent representation of  this dataset in terms of left and right bounds for the serial interval for each pair in his Supplementary Appendix. The latter reference finds that the estimated median serial interval is 2.7 days (95% CI, 2.0 to 3.5), with a serial interval of less than 5.1 days (95% CI, 3.6 to 6.5) in 95% percent of persons (95th percentile of the serial interval). These results are obtained by means of a likelihood-based approach with a Weibull fit.
+
+[1] Lessler, J., Reich, N. G., Cummings, D. A., & New York City Department of Health and Mental Hygiene Swine Influenza Investigation Team. (2009). Outbreak of 2009 pandemic influenza A (H1N1) at a New York City school. New England Journal of Medicine, 361(27), 2628-2636.
+
+
+### 3. Data processing
+
+```{r preprocessing}
+
+# Read raw data 
+datain <- read.csv("Thompson-2019-H1N1.csv", header = FALSE)
+
+colnames(datain) <- c("EL","ER","SL","SR")
+n <- nrow(datain) # Sample size
+
+#We use index 1 to refere to infector and index 2 for infectee
+
+#EL and ER are left and right bound of symptom onset times for infector
+tS1L <- datain$EL
+tS1R <- datain$ER
+all(tS1L < tS1R)
+
+#SL and SR are left and right bound of symptom onset times for infectee
+tS2L <- datain$SL
+tS2R <- datain$SR
+all(tS2L < tS2R)
+
+# Compute serial interval bounds
+SL <- tS2L - tS1R
+SR <- tS2R - tS1L
+
+# Data out
+dataH1N1 <- data.frame(Pair_index = seq_len(n), SL = SL, SR = SR)
+knitr::kable(dataH1N1)
+
+# Extract dataset in txt format
+write.table(dataH1N1, file = "dataH1N1.txt")
+
+```
+
+
+

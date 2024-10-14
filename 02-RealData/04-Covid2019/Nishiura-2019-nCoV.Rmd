@@ -1,0 +1,66 @@
+---
+title: "Data on transmission pairs for 2019-nCoV from Nishiura et al. 2020"
+author: "Oswaldo Gressani"
+date: "2024-08-16"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### 1. Data source
+
+**Last accessed (Date in YYYY-MM-DD format):** 2024-08-16 
+
+**HTML link to data source:** <https://github.com/aakhmetz/COVID19SerialInterval/blob/master/data/supplemetary%20table.csv>
+
+**HTML link or DOI to associated article:** <https://doi.org/10.1016/j.ijid.2020.02.060>
+
+**Journal name:** International Journal of Infectious Diseases (IJII)
+
+**Data format:** Dataset downloaded from GitHub repository in csv format (.csv).
+
+**Additional notes:** None. 
+
+
+### 2. Short data description
+
+Data on illness onset of primary cases (infectors) and secondary cases (infectees) are available. There are 28 pairs in total. The dataset is further divided into probable pairs (n=10) and certain pairs (n=18). The data is doubly interval censored and (EL, ER) denotes the symptom onset interval for the infector and (SL, SR) denotes the symptom onset interval for the infectee. The authors of the article found that the median serial interval was estimated at 4.0 days (95% CI: 3.1, 4.9). The mean and standard deviation (SD) of the serial interval were estimated at 4.7 days (95% CI: 3.7, 6.0) and 2.9 days (95% CI: 1.9, 4.9), respectively. These results are obtained by analyzing all n=28 pairs with a Bayesian approach using a doubly interval censored likelihood. The best model fit is given by a lognormal distribution based on the WAIC criterion.
+
+
+### 3. Data processing
+
+The data is now processed to obtain left and right bounds of the serial interval for each pair. This is known as a data reduction technique.
+
+```{r load data}
+datain <- read.csv(file = "Nishiura-2019-nCoV.csv")
+
+n <- nrow(datain) # Total number of transmission pairs
+
+#We use index 1 to refere to infector and index 2 for infectee
+
+#EL and ER are left and right bound of symptom onset times for infector
+tS1L <- datain$EL
+tS1R <- datain$ER
+all(tS1L < tS1R)
+
+#SL and SR are left and right bound of symptom onset times for infectee
+tS2L <- datain$SL
+tS2R <- datain$SR
+all(tS2L < tS2R)
+
+# Compute serial interval bounds
+SL <- tS2L - tS1R
+SR <- tS2R - tS1L
+
+# Data out
+data2019nCoV <- data.frame(Pair_index = seq_len(n), SL = SL, SR = SR)
+knitr::kable(data2019nCoV)
+
+# Extract dataset in txt format
+write.table(data2019nCoV, file = "data2019nCoV.txt")
+```
+
+
+
