@@ -6,8 +6,8 @@ Oswaldo Gressani
 
 This repository contains all the routines required to reproduce the
 results in the preprint entitled “Nonparametric serial interval
-estimation” by Oswaldo Gressani and Niel Hens. The preprint will soon be
-available on a preprint repository.
+estimation” by Oswaldo Gressani and Niel Hens available on MedRxiv
+<https://doi.org/10.1101/2024.10.16.24315600>.
 
 This repository is organized in two main folders (**01-Simulations** and
 **02-RealData**).
