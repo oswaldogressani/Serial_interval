@@ -5,12 +5,12 @@ Oswaldo Gressani
 ### Reproducibility instructions
 
 This repository contains all the routines required to reproduce the
-results in the preprint entitled “Nonparametric serial interval
-estimation” by Oswaldo Gressani and Niel Hens available on MedRxiv
+results of the article “Nonparametric serial interval estimation” by
+Oswaldo Gressani and Niel Hens.
 <https://doi.org/10.1101/2024.10.16.24315600>.
 
-This repository is organized in two main folders (**01-Simulations** and
-**02-RealData**).
+This repository is organized in three main folders (**01-Simulations**,
+**02-RealData** and **03-Figures**).
 
 - **01-Simulations** can be used to recover the results from the
   simulation study.
@@ -18,17 +18,20 @@ This repository is organized in two main folders (**01-Simulations** and
 - **02-RealData** can be used to recover results related to real data
   applications.
 
+- **03-Figures** can be used to recover the Figures in the article.
+
 Readers and users are encouraged to reproduce the results contained in
-this folder. EpiLPS (v1.4.0) will be needed and can be installed from
-the GitHub repository <https://github.com/oswaldogressani/EpiLPS>.
+this folder. The EpiDelays package (version 0.0.1) will be needed and
+can be installed from the GitHub repository
+<https://github.com/oswaldogressani/EpiDelays>.
 
 ### Website
 
-<https://epilps.com/>
+EpiDelays website is under construction
 
 ### Repository version
 
-This is version 0.0.1 (2024-10-14) - “SILPS-V1”.
+This is version 0.0.2 (2025-05-01) - “SIEpiDelays-V2”.
 
 ### License
 
