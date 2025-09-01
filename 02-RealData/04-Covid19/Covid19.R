@@ -23,7 +23,7 @@ round(SIfit$npestim, 1)
 
 #----------------- Plot results
 
-pdf(file = "Fig6.pdf", width = 24, height = 8.5)
+pdf(file = "Fig6.pdf", width = 25.5, height = 9.5)
 
 par(mfrow = c(1,2), mai = c(1,1,1,1))
 

@@ -1,5 +1,5 @@
 ---
-title: "Nonparametric serial interval estimation"
+title: "Nonparametric serial interval estimation with uniform mixtures"
 output: github_document
 author: Oswaldo Gressani
 ---
@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ### Reproducibility instructions
 
-This repository contains all the routines required to reproduce the results of the article “Nonparametric serial interval estimation” by Oswaldo Gressani and Niel Hens. [https://doi.org/10.1101/2024.10.16.24315600](https://doi.org/10.1101/2024.10.16.24315600). 
+This repository contains all the routines required to reproduce the results of the article “Nonparametric serial interval estimation with uniform mixtures” by Oswaldo Gressani and Niel Hens. [https://doi.org/10.1371/journal.pcbi.1013338](https://doi.org/10.1371/journal.pcbi.1013338). 
 
 This repository is organized in three main folders (**01-Simulations**, **02-RealData** and **03-Figures**). 
 
@@ -25,20 +25,11 @@ Readers and users are encouraged to reproduce the results contained in this fold
 The EpiDelays package (version 0.0.1) will be needed and can be installed from the GitHub repository
 [https://github.com/oswaldogressani/EpiDelays](https://github.com/oswaldogressani/EpiDelays).
 
-### Website
-EpiDelays website is under construction
-
 ### Repository version
-This is version 0.0.2 (2025-05-01) - “SIEpiDelays-V2”.
+This is version 0.0.3 (2025-09-01) - “SIEpiDelays-V3”.
 
 ### License
-Copyright © Oswaldo Gressani. All rights reserved.
+GPL-3.0 
 
 ### Funding statement
-This project was supported by the VERDI project (101045989) and the ESCAPE project (101095619),
-funded by the European Union. Views and opinions expressed are however those of the author(s)
-only and do not necessarily reflect those of the European Union or European Health and Digital
-Executive Agency (HADEA). Neither the European Union nor the granting authority can be
-held responsible for them. This research project is also supported by BE-PIN
-(contract nr. TD/231/BE-PIN) funded by BELSPO (Belgian Science Policy Office) as
-part of the POST-COVID programme.
+OG and NH were supported by the VERDI project (101045989) and the ESCAPE project (101095619), funded by the European Union. Views and opinions expressed are however those of the authors only and do not necessarily reflect those of the European Union or European Health and Digital Executive Agency (HADEA). Neither the European Union nor the granting authority can be held responsible for them. OG and NH acknowledge the financial support of the Fondation Universitaire de Belgique (file nr. AS-0608). OG and NH were also supported by the BE-PIN project (contract nr. TD/231/BE-PIN) funded by BELSPO (Belgian Science Policy Office) as part of the POST-COVID programme. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.

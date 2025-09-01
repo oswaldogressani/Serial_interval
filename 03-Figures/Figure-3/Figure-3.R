@@ -181,7 +181,7 @@ plot(nvec, qp05_n, type = "l", col = "black", xlab = "Sample size",
      ylab = "", main = "Selected SI quantiles",
      ylim = c(-3,10), cex.axis = ftsize, cex.lab = ftsize, 
      yaxt = "n", cex.main = ftsize)
-abline(h = qtrue, lty = 2)
+abline(h = qtrue, lty = 3)
 axis(2, at = qtrue, c(expression(q[0.05]), expression(q[0.25]),
                       expression(q[0.50]), expression(q[0.75]),
                       expression(q[0.95])), cex.axis = ftsize)
@@ -220,7 +220,7 @@ plot(nvec, qp05_n_ec, type = "l", col = "black", xlab = "Sample size",
      ylab = "", main = "Selected SI quantiles",
      ylim = c(-3,10), cex.axis = ftsize, cex.lab = ftsize, 
      yaxt = "n", cex.main = ftsize)
-abline(h = qtrue, lty = 2)
+abline(h = qtrue, lty = 3)
 axis(2, at = qtrue, c(expression(q[0.05]), expression(q[0.25]),
                       expression(q[0.50]), expression(q[0.75]),
                       expression(q[0.95])), cex.axis = ftsize)
